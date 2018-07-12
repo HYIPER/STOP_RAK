@@ -11,8 +11,9 @@ client.on('message', message => {
     	message.reply('pong');
   	}
 });
-new cronJob('* 25 * * * *', function(){
+new cronJob('30 * * * * *', function(){
     console.log('Наступила двадцать пятая минута часа');
+    client.channels.get(основной).send('My Message');
 }
 // THIS  MUST  BE  THIS  WAY
 client.login(process.env.BOT_TOKEN);
